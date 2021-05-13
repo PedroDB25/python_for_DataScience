@@ -12,46 +12,50 @@ Que representan la edad de unos niños y sus tamaños.
 ### ejemplo1: Crear un array y ver cuantos tienen mas de 4 años.
 
 R:
-1)Creamos el array con las edades.
-2)Comparar cada valor y ver si nos da true o false.
-3)Sumar los true.
-4)Un print mostrar valores.
+1. Creamos el array con las edades.
+2. Comparar cada valor y ver si nos da true o false.
+3. Sumar los true.
+4. Un print mostrar valores.
+~~~
+ArrayDeEdades=np.array(num)
+ArrayDeBooleanos=ArrayDeEdades>4
+suma=ArrayDeBooleanos.sum()
+print(suma)
+#resultado 7
+~~~
 
-	ArrayDeEdades=np.array(num)
-	ArrayDeBooleanos=ArrayDeEdades>4
-	suma=ArrayDeBooleanos.sum()
-	print(suma)
-	#resultado 7
-	
 ### ejemplo2: Obtener las dimensiones del array
 
 R:
 1. Creamos el array de edades.
 2. Utilizamos los metodos .size y .shape
 3. Mostramos los resultados.
--
-	
-	ArrayDeEdades=np.array(num)
-	print(ArrayDeEdades.size)
-	print(ArrayDeEdades.shape)
-	#resultado 13    y    (13,)
+
+~~~
+ArrayDeEdades=np.array(num)
+print(ArrayDeEdades.size)
+print(ArrayDeEdades.shape)
+#resultado 13    y    (13,)
+~~~
 
 ### ejemplo3: unir arrays de las 3 formas.
-##### a) Unir listas
+
+#### a) Unir listas
 
 1. Concatenamos ambas listas.
 2. Creamos el array
 3. usamos reshape para tener 2 filas
 4. Imprimimos los resultados
--
-	sobrinos=num+num2
-	arrayS=np.array(sobrinos)
-	array2D=arrayS.reshape(-1,2)
-	print(array2D)
-	#resultado
-	#[[1 2 3 4 4 5 6 7 8 6 5 4]
-	# [41 72 80 85 90 97 107 113 138 140  94  80  73]]
-	
+~~~
+sobrinos=num+num2
+arrayS=np.array(sobrinos)
+array2D=arrayS.reshape(-1,2)
+print(array2D)
+#resultado
+#[[1 2 3 4 4 5 6 7 8 6 5 4]
+# [41 72 80 85 90 97 107 113 138 140  94  80  73]]
+~~~
+
 #### b) Unir Arrays
 	
 	arraynum=np.array(num)
