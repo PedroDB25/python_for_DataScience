@@ -26,10 +26,11 @@ R:
 ### ejemplo2: Obtener las dimensiones del array
 
 R:
-1)Creamos el array de edades.
-2)Utilizamos los metodos .size y .shape
-3)Mostramos los resultados.
-
+1. Creamos el array de edades.
+2. Utilizamos los metodos .size y .shape
+3. Mostramos los resultados.
+-
+	
 	ArrayDeEdades=np.array(num)
 	print(ArrayDeEdades.size)
 	print(ArrayDeEdades.shape)
@@ -38,11 +39,11 @@ R:
 ### ejemplo3: unir arrays de las 3 formas.
 ##### a) Unir listas
 
-1)Concatenamos ambas listas.
-2)Creamos el array
-3)usamos reshape para tener 2 filas
-4)Imprimimos los resultados
-
+1. Concatenamos ambas listas.
+2. Creamos el array
+3. usamos reshape para tener 2 filas
+4. Imprimimos los resultados
+-
 	sobrinos=num+num2
 	arrayS=np.array(sobrinos)
 	array2D=arrayS.reshape(-1,2)
