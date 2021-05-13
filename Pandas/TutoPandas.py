@@ -2,7 +2,7 @@ import pandas as pd
 Vedad=[1,2,3,4,4,5,6,7,8,9, 6, 5,4]
 Vestatura=[41,72,80,85,90,97,107,113,138,140,94,80,73]
 Vgenero=[1,1,0,0,0,1,0,1,1,0,0,1,0]
-Vnombres=['dante','gusti','anahi','antutu','Claudia','pato','pamela','caca','pedro','cacas','javiera','cristobal','soraya']
+Vnombres=['dante','gusti','anahi','antutu','Claudia','pato','pamela','aceituna','pedro','rabito','javiera','cristobal','soraya']
 
 presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 
