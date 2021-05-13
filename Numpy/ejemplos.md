@@ -83,31 +83,35 @@ R:
 	Seleccion(sobrinos)
 	respuesta 4   85 [4,85]   [41 72 80]
 
-#ejemplo5: 
-#el sobrino de la posicion 0 acaba de cumplir 2 años
-#Remplazar(num,2)
-#print(num)
-#resultado [2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 6, 5, 4]
+***ejemplo5: Modificar parametros, el sobrino en la posicion 0 ha cumplido 2 años.
 
-#ejemplo6
-#RemplazarVarios(num)
-#print(num)
-#Resultado [1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 1, 1, 1]
+	arraynum=np.array(num)
+	arraynum[0]=2
+	print(arraynum)
+	resultado [2, 2, 3, 4, 4, 5, 6, 7, 8, 9, 6, 5, 4]
 
-#ejemplo8
+***ejemplo6: Los gemelos en las posiciones 3 y 4, han cumplido 5 años.
+	
+	ListaAux=[5,5]
+	arraynum[3:5]=ListaAux
+	print(num)
+	Resultado [1, 2, 3, 5, 5, 5, 6, 7, 8, 9, 6, 5, 4]
+
+***ejemplo7: Matematica basica en arrays.
+
 #print(mat(num,12,"*"))
 #resultado [ 12  24  36  48  48  60  72  84  96 108  72  60  48]
 
-#ejemplo9								
+#ejemplo8								
 #MasMet(num,num2,2,"h")
 #resultado 1,41
 
 
-#ejemplo10
+#ejemplo9
 #comparacion(num,5,3)
 #resultado boleano   ,    7   y   segmento
 
-#ejemplo11 en dos dimensiones
+#ejemplo10 en dos dimensiones
 #x_y=JuntarArrays(num,num2,"h")
 #x_yB=x_y[:,1]>80
 #print(x_y[x_yB])
