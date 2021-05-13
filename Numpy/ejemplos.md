@@ -79,9 +79,8 @@ R:
 	sobrinos=num+num2
 	arrayS=np.array(sobrinos)
 	array2D=arrayS.reshape(-1,2)
-	
-	Seleccion(sobrinos)
-	respuesta 4   85 [4,85]   [41 72 80]
+	print(array2D[0,1])
+	#resultado 41
 
 ***ejemplo5: Modificar parametros, el sobrino en la posicion 0 ha cumplido 2 años.
 
