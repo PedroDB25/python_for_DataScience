@@ -1,31 +1,89 @@
-import numpy
-num=[1,2,3,4,4,5,6,7,8,9, 6, 5,4]
-num2=[41,72,80,85,90,97,107,113,138,140,94,80,73]
+En este texto trataremos algunos ejemplos de las funciones basicas de numpy  
+para empezar siempre debes importar numpy y por convencion le agregamos el alias np
 
-#ejemplo1:
-#print((crear_array(num)>4).sum())
-#resultado 7	
+	import numpy as np
+
+Mientras que para estos ejercicios trabajaremos con estas listas.  
+Que representan la edad de unos niños y sus tamaños.
+
+	num=[1,2,3,4,4,5,6,7,8,9, 6, 5,4]
+	num2=[41,72,80,85,90,97,107,113,138,140,94,80,73]
+
+***ejemplo1: Crear un array y ver cuantos tienen mas de 4 años.
+
+R:
+1)Creamos el array con las edades.
+2)Comparar cada valor y ver si nos da true o false.
+3)Sumar los true.
+4)Un print mostrar valores.
+
+
+	ArrayDeEdades=np.array(num)
+	ArrayDeBooleanos=ArrayDeEdades>4
+	suma=ArrayDeBooleanos.sum()
+	print(suma)
+	#resultado 7
 	
-#ejemplo2:
-#TamañoDeArray(num)
-#resultado 13    y    (13,)
+***ejemplo2: Obtener las dimensiones del array
 
-#ejemplo3:
-	#imaginemos que nuestra array num es la edad de nuestros sobrinos, y la nueva array num2 son sus estaturas en cms
-	#ahora tenemos dos arrays que podemos combinar
-#sobrinos=num+num2
-	#el array sobrinos tiene 26 filas y 1 columna, ahora con reshape podemos tener un array de 2 dimensiones
-#ModificarTamaño(sobrinos)
-#resultado
-#[[  1   2   3   4   4   5   6   7   8   9   6   5   4]
-# [ 41  72  80  85  90  97 107 113 138 140  94  80  73]]
+R:
+1)Creamos el array de edades.
+2)Utilizamos los metodos .size y .shape
+3)Mostramos los resultados.
 
-#ejemplo4: 
-#sobrinos=num+num2
-#Seleccion(sobrinos)
-#respuesta 4   85 [4,85]   [41 72 80]
+	ArrayDeEdades=np.array(num)
+	print(ArrayDeEdades.size)
+	print(ArrayDeEdades.shape)
+	#resultado 13    y    (13,)
 
-#ejemplo5
+***ejemplo3: unir arrays de las 3 formas.
+****a) Unir listas
+
+1)Concatenamos ambas listas.
+2)Creamos el array
+3)usamos reshape para tener 2 filas
+4)Imprimimos los resultados
+
+	sobrinos=num+num2
+	arrayS=np.array(sobrinos)
+	array2D=arrayS.reshape(-1,2)
+	print(array2D)
+	#resultado
+	#[[1 2 3 4 4 5 6 7 8 6 5 4]
+	# [41 72 80 85 90 97 107 113 138 140  94  80  73]]
+	
+****b) Unir Arrays
+	
+	arraynum=np.array(num)
+	arraynum2=np.array(num2)
+	arrayS=np.concatenate((arraynum,arraynum2))
+	array2D=arrayS.reshape(-1,2)
+	print(array2D)
+	#resultado
+	#[[1 2 3 4 4 5 6 7 8 6 5 4]
+	# [41 72 80 85 90 97 107 113 138 140  94  80  73]]
+	
+****c) UnirAbajo
+	
+	arraynum=np.array(num)
+	arraynum2=np.array(num2)
+	arrayS=np.vstack((arraynum,arraynum2))
+	print(arrayS)
+	#resultado
+	#[[1 2 3 4 4 5 6 7 8 6 5 4]
+	# [41 72 80 85 90 97 107 113 138 140  94  80  73]]
+
+
+***ejemplo4: Seleccionar valores de algun sobrino.
+
+	sobrinos=num+num2
+	arrayS=np.array(sobrinos)
+	array2D=arrayS.reshape(-1,2)
+	
+	Seleccion(sobrinos)
+	respuesta 4   85 [4,85]   [41 72 80]
+
+#ejemplo5: 
 #el sobrino de la posicion 0 acaba de cumplir 2 años
 #Remplazar(num,2)
 #print(num)
