@@ -1,4 +1,4 @@
-#Ejemplos de pandas
+#Ejemplos de pandas#
 
     import pandas as pd
 
@@ -14,7 +14,7 @@ Y una base de datos que usaremos en algunos ejemplos
     #presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 
 
-###ejemplo1: Crear una serie con las listas de edades y nombres, con nombres como index
+###ejemplo1: Crear una serie con las listas de edades y nombres, con nombres como index###
     
     serie=pd.Series(Vedad,index= Vnombres)
     print(serie)
@@ -25,7 +25,7 @@ Y una base de datos que usaremos en algunos ejemplos
     ...
 
 
-###ejemplo2: Crear un dataFrame con todos los datos que nos dan, con los nombres como indice.
+###ejemplo2: Crear un dataFrame con todos los datos que nos dan, con los nombres como indice.###
 
     DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
     DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -39,7 +39,7 @@ Y una base de datos que usaremos en algunos ejemplos
     ...
 
 
-###ejemplo3: Obtener las dimensiones del DataFrame
+###ejemplo3: Obtener las dimensiones del DataFrame###
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -49,13 +49,13 @@ Y una base de datos que usaremos en algunos ejemplos
 	print(DFSobrinos.size) #39 campos
 
 
-###ejemplo4: extraerCSV desde internet
+###ejemplo4: extraerCSV desde internet###
 
 	presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 	TamañoDF(presidents_df)
 
 
-###ejemplo5: Obtener algunos datos de la parte superior o inferior
+###ejemplo5: Obtener algunos datos de la parte superior o inferior###
 
 	presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 	print(presidents_df.head(1))
@@ -66,113 +66,129 @@ Y una base de datos que usaremos en algunos ejemplos
 			order  age  height       partyname
 	Donald J. Trump     45   70     191  republican
 
-#muchos datos sobre el dataframe
+	...muchos datos sobre el dataframe
 
-#ejemplo7 seleccionar varios
-#DF=DFsobrinos2()
-#nom1='dante'
-#nom2='pato'
-#Encontrarvarios(DF,nom1,nom2)
+###ejemplo6: seleccionar varios por su index desde un nombre hasta otro.###
 
-#ejemplo8
-#en caso que sepas la posicion
-#DF=DFsobrinos2()
-#posicion=3
-#EncontrarPorPosicion(DF,posicion)
-#resultado
-#edades       4
-#estatura    85
-#genero       0
-#Name: antutu
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	nom1='dante'
+	nom2='pato'
+	print(DFSobrinos.loc[nom1:nom2])
 
-#ejemplo9
-#DF=DFsobrinos2()
-#SelColum(DF,'edades')
-#Resultado
-#Index(['edades', 'estatura', 'genero'], dtype='object')
-#dante    1
-#gusti    2
-#anahi    3
-#Name: edades
+###ejemplo7: buscar por la posicion del dato###
 
-#ejemplo10
-#DF=DFsobrinos2()
-#SelComum(DF,'edades','estatura')
-#resultado
-#edades  estatura
-#dante       1        41
-#gusti       2        72
-#anahi       3        80
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	posicion=3
+	print(DFSobrinos.iloc[posicion])
+	#resultado
+	edades       4
+	estatura    85
+	genero       0
+	Name antutu
 
-#ejemplo11
-#DF=DFsobrinos2()
-#CalEsta(DF)
-#resultados
-#min
-#edades       1
-#estatura    41
-#genero       0
+###ejemplo8 Mostrar todas las columna###
 
-#max
-#edades        9
-#estatura    140
-#genero        1
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	print(DFSobrinos.columns)
 
-#mean
-#edades       4.923077
-#estatura    93.076923
-#genero       0.461538
 
-#cuantiles
-#0.25    4.0
-#0.50    5.0
-#0.75    6.0
-#1.00    9.0
+###ejemplo9 Utiliza la seleccion por index y muestra las tres primeras linea###
 
-#varianza
-#edades        5.243590
-#estatura    733.576923
-#genero        0.269231
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	print(DFSobrinos.loc[:,y:z].head(3))
+	#resultado
+	edades  estatura
+	dante       1        41
+	gusti       2        72
+	anahi       3        80
 
-#desviancion estandar
-#edades       2.289889
-#estatura    27.084625
-#genero       0.518875
+###ejemplo10 Mostrar estadisticas basicas###
 
-#otra forma de obtener estos datos es con el metodo .describe()
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	print(x.min()) #Minimo
+	print(x.max()) #Maximo
+	print(x.mean()) #Media
+	print(x['edades'].quantile([0.25, 0.5, 0.75, 1])) #cuantiles 25, 50 , 75 y 100
+	print(x.var()) #varianza
+	print(x.std()) #Desviacion estandar
+	
+	#resultados
+	#min
+	edades       1
+	estatura    41
+	genero       0
 
-#ejemplo12
-#DF=DFsobrinos2()
-#descripcion(DF)
-#resultado
-				#edades    estatura     genero
-#count  13.000000   13.000000  13.000000
-#mean    4.923077   93.076923   0.461538
-#std     2.289889   27.084625   0.518875
-#min     1.000000   41.000000   0.000000
-#25%     4.000000   80.000000   0.000000
-#50%     5.000000   90.000000   0.000000
-#75%     6.000000  107.000000   1.000000
-#max     9.000000  140.000000   1.000000
+	#max
+	edades        9
+	estatura    140
+	genero        1
 
-#ejemplo 13
-#VNN(presidents_df,'party')
+	#mean
+	edades       4.923077
+	estatura    93.076923
+	genero       0.461538
 
-#resultado
-#republican               19
-#democratic               15
-#democratic-republican     4
-#whig                      4
-#none                      1
-#federalist                1
-#national union            1
+	#cuantiles
+	#0.25    4.0
+	#0.50    5.0
+	#0.75    6.0
+	#1.00    9.0
 
-#count             45
-#unique             7
-#top       republican
-#freq              19
+	#varianza
+	edades        5.243590
+	estatura    733.576923
+	genero        0.269231
 
-#ejercicio14
+	#desviancion estandar
+	edades       2.289889
+	estatura    27.084625
+	genero       0.518875
+
+
+
+###ejemplo11 Usa el metodo .describe() para extraer estadistica basicas.###
+
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	print(DFSobrinos.describe())
+	
+	#resultado
+		edades    estatura     genero
+	count  13.000000   13.000000  13.000000
+	mean    4.923077   93.076923   0.461538
+	std     2.289889   27.084625   0.518875
+	min     1.000000   41.000000   0.000000
+	25%     4.000000   80.000000   0.000000
+	50%     5.000000   90.000000   0.000000
+	75%     6.000000  107.000000   1.000000
+	max     9.000000  140.000000   1.000000
+
+###ejemplo 12 Obten las estadisticas de los datos no numericos.###
+
+	print(presidents_df[party].value_counts())
+	print(presidents_df[party].describe())
+
+	#resultado
+	republican               19
+	democratic               15
+	democratic-republican     4
+	whig                      4
+	none                      1
+	federalist                1
+	national union            1
+
+	count             45
+	unique             7
+	top       republican
+	freq              19
+
+###ejercicio13###
+
 #DF=DFsobrinos2()
 #agruparpor(DF,'genero')
 #resultado
@@ -181,7 +197,7 @@ Y una base de datos que usaremos en algunos ejemplos
 #0       5.142857  95.571429
 #1       4.666667  90.166667
 
-#ejemplo 15
+#ejemplo 14
 #import numpy as np
 #DF=DFsobrinos2()
 #agruparpormas(DF,'genero','edades')
