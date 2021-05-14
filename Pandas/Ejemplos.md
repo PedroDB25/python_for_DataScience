@@ -39,38 +39,32 @@ Y una base de datos que usaremos en algunos ejemplos
     ...
 
 
+###ejemplo3: Obtener las dimensiones del DataFrame
+
+	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
+	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
+	print(DFSobrinos.shape) #(13, 3) dimensiones
+	print(DFSobrinos.shape[0]) #13 filas
+	print(DFSobrinos.shape[1]) #3 columnas
+	print(DFSobrinos.size) #39 campos
 
 
-#ejemplo3	
-#DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
-#DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
-#TamañoDF(DFSobrinos)
-#resultado
-#dimensiones
-#(13, 3)
-#filas
-#13
-#colummas
-#3
-#campos
-#39
+###ejemplo4: extraerCSV desde internet
+
+	presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
+	TamañoDF(presidents_df)
 
 
+###ejemplo5: Obtener algunos datos de la parte superior o inferior
 
-
-#ejemplo4 extraerCSV desde internet
-#presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
-#TamañoDF(presidents_df)
-
-
-#ejemplo5	
-
-#VistazoDF(presidents_df,1)
-#resultado
-#						order  age  height partyname
-#George Washington      1   57     189  none
-#						order  age  height       partyname
-#Donald J. Trump     45   70     191  republican
+	presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
+	print(presidents_df.head(1))
+	print(presidents_df.tail(1))
+	#resultado
+			order  age  height partyname
+	George Washington      1   57     189  none
+			order  age  height       partyname
+	Donald J. Trump     45   70     191  republican
 
 #muchos datos sobre el dataframe
 
