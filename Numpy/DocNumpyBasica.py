@@ -1,9 +1,6 @@
 #import y alias
 import numpy as np
 
-num=[1,2,3,4,4,5,6,7,8,9, 6, 5,4]
-num2=[41,72,80,85,90,97,107,113,138,140,94,80,73]
-
 #funcion para crear arrayas
 def crear_array(x):
 	array_creado=np.array(x)
