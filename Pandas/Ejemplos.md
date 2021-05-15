@@ -1,4 +1,4 @@
-# Ejemplos de pandas#
+# Ejemplos de pandas
 
     import pandas as pd
 
@@ -14,7 +14,7 @@ Y una base de datos que usaremos en algunos ejemplos
     #presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 
 
-### ejemplo1: Crear una serie con las listas de edades y nombres, con nombres como index.###
+### ejemplo1: Crear una serie con las listas de edades y nombres, con nombres como index.
     
     serie=pd.Series(Vedad,index= Vnombres)
     print(serie)
@@ -49,13 +49,13 @@ Y una base de datos que usaremos en algunos ejemplos
 	print(DFSobrinos.size) #39 campos
 
 
-### ejemplo4: extraerCSV desde internet###
+### ejemplo4: extraerCSV desde internet
 
 	presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 	TamañoDF(presidents_df)
 
 
-### ejemplo5: Obtener algunos datos de la parte superior o inferior.###
+### ejemplo5: Obtener algunos datos de la parte superior o inferior.
 
 	presidents_df = pd.read_csv('https://sololearn.com/uploads/files/president_heights_party.csv', index_col='name')
 	print(presidents_df.head(1))
@@ -68,7 +68,7 @@ Y una base de datos que usaremos en algunos ejemplos
 
 	...muchos datos sobre el dataframe
 
-### ejemplo6: seleccionar varios por su index desde un nombre hasta otro.###
+### ejemplo6: seleccionar varios por su index desde un nombre hasta otro.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -76,7 +76,7 @@ Y una base de datos que usaremos en algunos ejemplos
 	nom2='pato'
 	print(DFSobrinos.loc[nom1:nom2])
 
-### ejemplo7: buscar por la posicion del dato###
+### ejemplo7: buscar por la posicion del dato.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -88,14 +88,14 @@ Y una base de datos que usaremos en algunos ejemplos
 	genero       0
 	Name antutu
 
-### ejemplo8 Mostrar todas las columna###
+### ejemplo8 Mostrar todas las columna.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
 	print(DFSobrinos.columns)
 
 
-### ejemplo9 Utiliza la seleccion por index y muestra las tres primeras linea###
+### ejemplo9 Utiliza la seleccion por index y muestra las tres primeras linea.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -106,7 +106,7 @@ Y una base de datos que usaremos en algunos ejemplos
 	gusti       2        72
 	anahi       3        80
 
-### ejemplo10 Mostrar estadisticas basicas###
+### ejemplo10 Mostrar estadisticas basicas.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -151,7 +151,7 @@ Y una base de datos que usaremos en algunos ejemplos
 
 
 
-### ejemplo11 Usa el metodo .describe() para extraer estadistica basicas.###
+### ejemplo11 Usa el metodo .describe() para extraer estadistica basicas.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -168,7 +168,7 @@ Y una base de datos que usaremos en algunos ejemplos
 	75%     6.000000  107.000000   1.000000
 	max     9.000000  140.000000   1.000000
 
-### ejemplo 12 Obten las estadisticas de los datos no numericos.###
+### ejemplo 12 Obten las estadisticas de los datos no numericos.
 
 	print(presidents_df[party].value_counts())
 	print(presidents_df[party].describe())
@@ -187,7 +187,7 @@ Y una base de datos que usaremos en algunos ejemplos
 	top       republican
 	freq              19
 
-### ejercicio13: Mirar la media de los datos por genero.###
+### ejercicio13: Mirar la media de los datos por genero.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -198,7 +198,7 @@ Y una base de datos que usaremos en algunos ejemplos
 	0       5.142857  95.571429
 	1       4.666667  90.166667
 
-### ejemplo14: Agregar por genero y mirar las edades, calculando su minimo, maximo y media###
+### ejemplo14: Agregar por genero y mirar las edades, calculando su minimo, maximo y media.
 
 	DicSobrinos = {'edades': Vedad,'estatura':Vestatura,'genero':Vgenero}
 	DFSobrinos=HDataFrame(DicSobrinos,Vnombres)
@@ -211,7 +211,7 @@ Y una base de datos que usaremos en algunos ejemplos
 	1         1       5    8
 
 
-### ejemplo 15: Agrupar los datos por genero, sobre la edad obtener la mediana y la media, mientras que, sobre la estatura obtener  el minimo y el maximo. ###
+### ejemplo 15: Agrupar los datos por genero, sobre la edad obtener la mediana y la media, mientras que, sobre la estatura obtener  el minimo y el maximo.
 	
 	print(DF.groupby('genero').agg({'edades': [np.median, np.mean],'estatura':    [min, max]}))
 	#resultado
