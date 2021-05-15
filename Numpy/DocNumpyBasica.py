@@ -25,11 +25,11 @@ def ModificarTamaño(x):
 #Para esto hay varias formas
 #1 unir las listas antes, formar un array y luego un resharpe
 def unirListas(x,y):
-	return np.array(x+y)
+	return np.array(x+y).reshape(2,-1)
 
 #2 si ya tenemos los arrays, podemos concatenarlos y luego usar resharpe
 def unirArray(x,y):
-	return np.concatenate((x,y)).resharpe
+	return np.concatenate((x,y)).resharpe(2,-1)
 
 #3 Usar vstack o hstack (para estos tenemos que tenerlos en las mismas dimensiones desde antes)
 def unirArrayAlLado():
